@@ -1,0 +1,39 @@
+.sidebar{
+
+    width:250px;
+
+    background:#1e1b4b;
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:25px;
+
+}
+
+.sidebar h2{
+
+    margin-bottom:40px;
+
+}
+
+.sidebar button{
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    text-align:left;
+
+    font-size:18px;
+
+    margin:12px 0;
+
+    cursor:pointer;
+
+}

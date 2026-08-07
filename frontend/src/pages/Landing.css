@@ -1,0 +1,67 @@
+.landing {
+    height: 100vh;
+
+    background-image:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("../assets/images/palm-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content{
+    text-align:center;
+    color:white;
+}
+
+.content h1{
+    font-size:70px;
+    margin-bottom:15px;
+}
+
+.content h3{
+    font-size:28px;
+    font-weight:400;
+    margin-bottom:50px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.buttons button{
+    width:170px;
+    height:55px;
+
+    border:none;
+    border-radius:40px;
+
+    font-size:20px;
+    cursor:pointer;
+
+    /* Add these */
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+
+    transition:.3s;
+}
+
+.login-btn{
+    color:white;
+}
+
+.register-btn{
+    color:white;
+}
+
+.buttons button:hover{
+    transform: translateY(-4px) scale(1.03);
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+}
