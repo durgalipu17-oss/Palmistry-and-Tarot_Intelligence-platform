@@ -7,6 +7,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from routers.dashboard import router as dashboard_router
 from fastapi.staticfiles import StaticFiles
 from pathlib import Path
+# from dotenv import load_dotenv
+# load_dotenv()
 
 Base.metadata.create_all(bind=engine)
 

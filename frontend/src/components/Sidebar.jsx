@@ -2,6 +2,16 @@ import "./Sidebar.css";
 
 function Sidebar({activePage,setActivePage}){
 
+    const handleLogout = () => { 
+        const confirmLogout = window.confirm( 
+            "Are you sure you want to logout?" 
+        ); 
+
+        if (confirmLogout) { 
+            localStorage.removeItem("token"); 
+            window.location.href = "/"; 
+        } 
+    };
     return(
 
         <div className="sidebar">
@@ -28,8 +38,8 @@ function Sidebar({activePage,setActivePage}){
                 👤 Profile
             </button>
 
-            <button>
-                🚪 Logout
+            <button onClick={handleLogout}> 
+                🚪 Logout 
             </button>
 
         </div>

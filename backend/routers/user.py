@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, UploadFile, File
 from sqlalchemy.orm import Session
 from fastapi import HTTPException, status
+from services.llm_service import generate_personalized_reading
 
 from database import get_db
 from models.user import User
@@ -83,7 +84,14 @@ def get_profile(current_user: User = Depends(get_current_user)):
     return {
         "id": current_user.id,
         "username": current_user.username,
-        "email": current_user.email
+        "email": current_user.email,
+        "age": current_user.age, 
+        "occupation": current_user.occupation, 
+        "goals": current_user.goals, 
+        "interests": current_user.interests,
+        "zodiac": current_user.zodiac,
+        "reading_style": current_user.reading_style, 
+        "bio": current_user.bio
     }
 
 @router.put("/profile")
@@ -194,12 +202,19 @@ async def predict(
     db.add(new_reading)
     db.commit()
     db.refresh(new_reading)
+    from services.llm_service import generate_personalized_reading
 
+    llm_reading = generate_personalized_reading(
+        None,
+        interpretation,
+        tarot='Palm analysis only'
+    )
     return {
-        "interpretation": interpretation,
-        "Personality": personality,
-        "Recommendation": recommendation,
-        "Life Trend": life_trends
+        # "interpretation": interpretation,
+        # "Personality": personality,
+        # "Recommendation": recommendation,
+        # "Life Trend": life_trends
+        'llm_reading': llm_reading
     }
 
 @router.get("/tarot/draw")
@@ -342,3 +357,26 @@ def get_reading_history(
         })
 
     return history
+
+@router.get("/llm-reading")
+def llm_reading(
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    latest_reading = (
+        db.query(Reading)
+        .filter(Reading.user_id == current_user.id)
+        .order_by(Reading.created_at.desc())
+        .first()
+    )
+
+    if not latest_reading:
+        return {"message": "No reading found"}
+
+    result = generate_personalized_reading(
+        profile=current_user,
+        palm=latest_reading.palm_interpretation,
+        tarot=latest_reading.tarot_interpretation
+    )
+
+    return {"llm_reading": result}
