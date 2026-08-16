@@ -54,12 +54,28 @@ function Login() {
 
         }
 
+        // catch (error) {
+
+        //     alert("Invalid Username or Password");
+        //     console.error(error);
+
+        // }
+
         catch (error) {
+            console.error("LOGIN ERROR:", error);
 
-            alert("Invalid Username or Password");
-            console.error(error);
-
-        }
+            if (error.response) {
+                if (error.response.status === 401) {
+                    alert("Invalid Username or Password");
+                } else {
+                    alert(`Login failed. Server returned ${error.response.status}`);
+                }
+            } else if (error.request) {
+                alert("Unable to reach the server. Please check your internet connection.");
+            } else {
+                alert("Something went wrong. Please try again.");
+            }
+}
 
     };
 
