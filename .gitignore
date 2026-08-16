@@ -1,6 +1,10 @@
 __pycache__/
 *.pyc
-venv/
+*.pyo
+*.db
+.venv/
 backend/palmistry.db
 backend/uploads/
 .env
+.vercel/
+dataset/

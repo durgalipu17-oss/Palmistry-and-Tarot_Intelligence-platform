@@ -26,7 +26,7 @@ app.add_middleware(
 app.include_router(user_router)
 app.include_router(dashboard_router)
 
-cards_path = Path(__file__).parent.parent / "ai" / "tarot" / "cards"
+cards_path = Path(__file__).parent / "ai" / "tarot" / "cards"
 
 app.mount(
     "/tarot-cards",

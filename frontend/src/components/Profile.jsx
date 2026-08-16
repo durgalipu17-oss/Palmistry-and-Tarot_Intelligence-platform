@@ -102,61 +102,73 @@ function Profile() {
   }
 };
   return (
-    <div className="profile-page">
-      <h1>👤 My Profile</h1>
-
-      <div className="profile-card">
-        <label>Username</label>
-        <input value={profile.username} disabled />
+    <div className="profile-page"> 
+    <div className="profile-card"> 
+      <div className="profile-header"> 
+        <div className="profile-avatar">👤</div> 
+        <h1>{profile.username || "My Profile"}</h1> 
+        <p>@{profile.username}</p> 
+      </div> 
+        <div className="profile-field"> 
+          <label>Username</label> 
+          <input value={profile.username} disabled 
+          /> 
+        </div>
 
         <label>Email</label>
         <input value={profile.email} disabled />
 
-        <label>Age</label>
-        <input
-          type="number"
-          name="age"
-          value={profile.age || ""}
-          onChange={handleChange}
-        />
+        <div className="profile-row">
 
-        <label>Zodiac</label>
-        <select
-          name="zodiac"
-          value={profile.zodiac || ""}
-          onChange={handleChange}
-        >
-          <option value="">Select Zodiac</option>
-          <option value="Aries">Aries</option>
-          <option value="Taurus">Taurus</option>
-          <option value="Gemini">Gemini</option>
-          <option value="Cancer">Cancer</option>
-          <option value="Leo">Leo</option>
-          <option value="Virgo">Virgo</option>
-          <option value="Libra">Libra</option>
-          <option value="Scorpio">Scorpio</option>
-          <option value="Sagittarius">Sagittarius</option>
-          <option value="Capricorn">Capricorn</option>
-          <option value="Aquarius">Aquarius</option>
-          <option value="Pisces">Pisces</option>
-        </select>
+  <div className="profile-field">
+    <label>Age</label>
+    <input
+      type="number"
+      name="age"
+      value={profile.age || ""}
+      onChange={handleChange}
+    />
+  </div>
 
-        <label>Interests</label>
-        <input
-          name="interests"
-          value={profile.interests || ""}
-          onChange={handleChange}
-          placeholder="AI, Coding, Robotics..."
-        />
+  <div className="profile-field">
+    <label>Zodiac</label>
+    <select
+      name="zodiac"
+      value={profile.zodiac || ""}
+      onChange={handleChange}
+    >
+      <option value="">Select Zodiac</option>
+      <option value="Aries">Aries</option>
+      <option value="Taurus">Taurus</option>
+      <option value="Gemini">Gemini</option>
+      <option value="Cancer">Cancer</option>
+      <option value="Leo">Leo</option>
+      <option value="Virgo">Virgo</option>
+      <option value="Libra">Libra</option>
+      <option value="Scorpio">Scorpio</option>
+      <option value="Sagittarius">Sagittarius</option>
+      <option value="Capricorn">Capricorn</option>
+      <option value="Aquarius">Aquarius</option>
+      <option value="Pisces">Pisces</option>
+    </select>
+  </div>
 
-        <label>Bio</label>
-        <textarea
-          name="bio"
-          value={profile.bio || ""}
-          onChange={handleChange}
-          rows="4"
-          placeholder="Tell something about yourself..."
-        />
+</div>
+
+        <div className="profile-field"> 
+        <label>Interests</label> 
+        <input 
+        name="interests" value={profile.interests || ""} 
+        onChange={handleChange} placeholder="AI, Coding, Robotics..." 
+        /> 
+        </div>
+
+        <div className="profile-field"> 
+          <label>Bio</label> 
+          <textarea name="bio" value={profile.bio || ""} 
+          onChange={handleChange} rows="4" placeholder="Tell something about yourself..." 
+          /> 
+          </div>
 
         <button className="save-btn" onClick={handleSave}>
           {loading ? "Saving..." : "💾 Save Changes"}
