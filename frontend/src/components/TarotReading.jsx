@@ -121,7 +121,7 @@ function TarotReading() {
                                     <img
                                         src={
                                             reading && selectedCards.includes(index)
-                                                ? `http://127.0.0.1:8000/tarot-cards/${reading.cards[selectedCards.indexOf(index)].image}`
+                                                ? `https://palmistry-and-tarotintelligence-platform-production.up.railway.app/tarot-cards/${reading.cards[selectedCards.indexOf(index)].image}`
                                                 : cardBack
                                         }
                                         alt="card"
