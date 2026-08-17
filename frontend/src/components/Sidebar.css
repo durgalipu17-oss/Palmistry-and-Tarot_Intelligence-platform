@@ -1,39 +1,72 @@
 .sidebar{
-
     width:250px;
-
     background:#1e1b4b;
-
     color:white;
-
     display:flex;
-
     flex-direction:column;
-
     padding:25px;
-
 }
 
 .sidebar h2{
-
     margin-bottom:40px;
-
 }
 
 .sidebar button{
-
     background:none;
-
     border:none;
-
     color:white;
-
     text-align:left;
-
     font-size:18px;
-
     margin:12px 0;
-
     cursor:pointer;
 
+}
+
+/* Mobile menu button - hidden on desktop */
+.mobile-menu-btn {
+    display: none;
+}
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+
+    .mobile-menu-btn {
+        display: block;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 1001;
+
+        width: 45px;
+        height: 45px;
+
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+
+        color: white;
+        font-size: 25px;
+
+        cursor: pointer;
+
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -280px;
+
+        width: 250px;
+        height: 100vh;
+
+        z-index: 1000;
+
+        transition: left 0.3s ease;
+    }
+
+    .sidebar.sidebar-open {
+        left: 0;
+    }
 }

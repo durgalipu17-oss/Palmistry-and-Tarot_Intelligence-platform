@@ -65,3 +65,36 @@
     transform: translateY(-4px) scale(1.03);
     box-shadow:0 10px 25px rgba(0,0,0,.35);
 }
+
+@media (max-width: 480px) {
+    .landing {
+        min-height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .content h1 {
+        font-size: 42px;
+    }
+
+    .content h3 {
+        font-size: 20px;
+        margin-bottom: 35px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .buttons button {
+        width: 200px;
+        height: 52px;
+        font-size: 18px;
+    }
+}
