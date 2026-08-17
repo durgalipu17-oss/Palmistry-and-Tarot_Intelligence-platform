@@ -7,4 +7,3 @@ backend/palmistry.db
 backend/uploads/
 .env
 .vercel/
-dataset/
