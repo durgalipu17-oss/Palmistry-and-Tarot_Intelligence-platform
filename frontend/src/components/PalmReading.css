@@ -167,3 +167,28 @@ margin:12px 0;
 line-height:1.7;
 
 }
+
+.camera-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    margin-top: 10px;
+
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    color: white;
+    border-radius: 12px;
+
+    cursor: pointer;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.camera-btn:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.55);
+    transform: translateY(-2px);
+}

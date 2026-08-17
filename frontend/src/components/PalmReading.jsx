@@ -46,19 +46,39 @@ function PalmReading() {
                 Upload a clear image of your palm to receive AI-powered palmistry analysis.
             </p>
             <div className="upload-box">
-                <div className="icon">✋</div>
-                <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleFileChange}
-                />
-                <br /><br />
-                <button
-                    className="upload-btn"
-                    onClick={handleAnalyze}
-                >
-                    {loading ? "Analyzing..." : "Analyze Palm"}
-                </button>
+            <div className="icon">✋</div>
+
+                    {/* Normal image upload */}
+                    <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleFileChange}
+                    />
+
+                    <br />
+
+                    {/* Camera button */}
+                    <label htmlFor="camera-input" className="camera-btn">
+                        📷 Take Photo
+                    </label>
+
+                    <input
+                        id="camera-input"
+                        type="file"
+                        accept="image/*"
+                        capture="environment"
+                        onChange={handleFileChange}
+                        style={{ display: "none" }}
+                    />
+
+                    <br /><br />
+
+                    <button
+                        className="upload-btn"
+                        onClick={handleAnalyze}
+                    >
+                        {loading ? "Analyzing..." : "Analyze Palm"}
+                    </button>
             
                     {llmReading && (
                         <div className='result-card'>
