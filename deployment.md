@@ -6,8 +6,8 @@
 
 ## ⚙️ Backend API
 
-[Open Backend API](palmistry-and-tarotintelligence-platform-production.up.railway.app)
+[Open Backend API](https://palmistry-and-tarotintelligence-platform-production.up.railway.app)
 
 ## 📚 API Documentation
 
-[Open FastAPI Swagger Documentation](palmistry-and-tarotintelligence-platform-production.up.railway.app/docs)
+[Open FastAPI Swagger Documentation](https://palmistry-and-tarotintelligence-platform-production.up.railway.app/docs)
