@@ -2,7 +2,7 @@
 
 ## 🌐 Frontend
 
-[Open Frontend Application](https://palmistry-and-tarot-intelligence-platform-hrves520t-durga11.vercel.app/)
+[Open Frontend Application](https://palmistry-and-tarot-intelligence-pl.vercel.app)
 
 ## ⚙️ Backend API
 
